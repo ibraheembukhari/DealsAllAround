@@ -1,0 +1,42 @@
+@model DealsAllAround.Data.UserProvider
+@{
+    ViewData["Title"] = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+    <div class="text-center">
+    <img src="~/Images/Capture.png">
+    </div>
+
+<form action="Register" method="post">
+            <div class="text">Its Time To Register</div>
+                        @Html.AntiForgeryToken()
+            <br />@Html.ValidationSummary()
+            <div class="row center-block">
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="name1" name="name" type="text" placeholder="Name" required /> <br />
+                </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="email1" name="email" type="email" placeholder="Email Address" required /> <br />
+                 </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="password1" name="password" type="password" placeholder="Password " required /> <br />
+                </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="contact5" name="contact" type="tel" placeholder="Contact Number" required /> <br />
+                </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="brand1" name="brand" type="text" placeholder="Brand Name"  /> <br />
+                 </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <input class="form-control" id="address1" name="address" type="text"  placeholder="Address"  />  <br />
+                </div>
+                <div class="col-md-6 col-md-offset-4">
+                    <textarea class="form-control" id="message2" rows="3" name="message" type="text" placeholder="Any Message"></textarea> <br />
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <input class="btn btn-info center-block btn-block" id="reg1" type="submit" value="Register Now"/>
+                </div>
+            </div>
+        </form>
+@*@Html.Raw(TempData["msg"])*@

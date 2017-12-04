@@ -1,0 +1,49 @@
+@model DealsAllAround.Models.ApplicationUser
+@{
+    ViewData["Title"] = "Choose";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<div>
+    <form action="Logout" method="post">
+        <input class="pull-right btn btn-info" type="submit" id="logout1" value="LogOut" />
+    </form>
+</div>
+
+<div class="text-center">
+    <img src="~/Images/Capture.png">
+</div>
+
+<div>
+    <h4 class="text">
+    @Html.DisplayFor(m => m.sessions)
+    </h4>
+</div>
+<h3 class="text-center text">Select Your Option</h3>
+
+<div class="row center-block">
+    <form action="ShowAllData" method="post">
+        <div class="col-md-6 col-md-offset-3">
+            <input class="btn btn-info center-block btn-block" id="showdata1" type="submit" value="See All Product" />
+        </div>
+    </form>
+    <br /><br />
+    <form action="AddDeals" method="post" role="form">
+        <div class="col-md-6 col-md-offset-3 ">
+            <input class="btn btn-info center-block btn-block" id="adddeals1" type="submit" value="Add Product" />
+        </div>
+    </form>
+    <br /><br />
+    <form action="UpdateDeals" method="post" role="form">
+        <div class="col-md-6 col-md-offset-3">
+            <input class="btn btn-info center-block btn-block" id="updatepro1" type="submit" value="Update Product" />
+        </div>
+    </form>
+
+    <br /><br />
+    <form action="DeleteDeals" method="post" role="form">
+        <div class="col-md-6 col-md-offset-3 ">
+            <input class="btn btn-info center-block btn-block" id="deletepro2" type="submit" value="Delete Product" />
+        </div>
+    </form>
+</div>

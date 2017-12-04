@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "DeleteDeals";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br />
+<div class="pull-right btn btn-info">
+    @Html.ActionLink("Back", "Choose", "Home")
+</div>
+<br />
+    
+<div class="text-center">
+    <img src="~/Images/Capture.png">
+</div>
+
+    <form action="DeleteDeals" method="post">
+        <div class="text">Delete Deals Or Promotion</div>
+        <br /><br />
+        <div class="row center-block">
+            <div class="col-md-6 col-md-offset-4">
+                <input class="form-control" type="text" id="id7" name="id" placeholder="ID" /><br />
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+                <input class="btn btn-info center-block btn-block" id="deletepro1" type="submit" value="Delete Product" />
+            </div>
+        </div>
+    </form>
+  

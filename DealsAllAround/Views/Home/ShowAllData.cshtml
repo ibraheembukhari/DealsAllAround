@@ -1,0 +1,43 @@
+@model List<DealsAllAround.Models.DealProvider>
+
+@{
+    ViewData["Title"] = "ShowAllData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>DESCRIPTION</th>
+        <th>PRICE</th>
+        <th></th>
+        <th>DateTime</th>
+        <th class="pull-right">@Html.ActionLink("Back", "Choose", "Home")</th>
+    </tr>
+    @foreach (var s in Model)
+    {
+        <tr>
+            <td>
+                @s.id
+            </td>
+            <td>
+                @s.description
+            </td>
+            <td>
+                @s.price
+            </td>
+            <td>
+                 <img src='@s.image' style="max-width:100px; max-height:100px;" />
+               
+            </td>
+            <td>
+                 @s.createddate
+            </td>
+            <td>
+                @Html.ActionLink("Update", "UpdateDeals","Home", new { id = s.id },null) |
+                @Html.ActionLink("Delete", "DeleteDeals", "Home", new { id = s.id }, new { onclick = "return confirm('Are sure wants to delete?');" })
+            </td>
+        </tr>
+    } 
+</table>
+

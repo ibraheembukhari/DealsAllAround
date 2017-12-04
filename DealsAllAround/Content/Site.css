@@ -1,0 +1,101 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.42857143;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+
+}
+.glyp {
+    font-size: 30px;
+}
+.gif {
+    font-size:14px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 300px;
+    font-family:Verdana;
+    
+}
+.des {
+    color: black;
+    font-weight: normal;
+    font-family: Calibri;
+}
+.font {
+    font-size: 25px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Book Antiqua';
+}
+.clr {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    font-family: 'Book Antiqua';
+
+}
+.fixed-theme {
+    background-color: #222;
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+    font-weight:bold;
+}
+.center{
+    align-content:center
+}
+.text {
+    font-size: xx-large;
+    font-weight: bolder;
+    text-align: center;
+    font-family: Cambria;
+}
+.textsize {
+    font-family: cursive;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .log {
+    text-align: center;
+    font-family: cursive;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}

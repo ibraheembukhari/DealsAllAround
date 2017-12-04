@@ -1,0 +1,32 @@
+
+@{
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />    
+    <form action="Login" method="post">
+    <br />
+        <div class="text-center">
+            <img src="~/Images/Capture.png">
+        </div>
+        <br />
+    <div class="row">
+        <div class="col-md-6 col-md-offset-4 form-group input-group">
+          <span class="input-group-addon"><i class="gif glyphicon glyphicon-user"></i></span>  
+            <input class="form-control " type="email" name="email" id="email1" placeholder="Username" required aria-required="true" />   <br />
+        </div>
+        <div class="col-md-6 col-md-offset-4 form-group input-group">
+            <span class="input-group-addon"><i class="gif glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name="password" id="pass1" placeholder="Password" required aria-required="true" /> <br />
+        </div>
+        @*<div class="col-md-6 col-md-offset-4 form-group">
+            <input class="pull-left" type="checkbox" name="rememberme" checked  /><p class="pull-left glyphicon-info-sign text-info"> Remember Me</p> 
+        </div>*@
+        <div class="col-md-6 col-md-offset-4">
+            <input class="btn btn-info form-control" type="submit" name="submit" id="submit1" value="Log In" />
+            <br /><br /><br />
+
+        </div>      
+    </div>
+</form>
+<p class="text-center text">@ViewBag.Message</p>
