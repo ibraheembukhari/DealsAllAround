@@ -139,9 +139,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\ApplicationUser.cs" />
-    <Compile Include="Models\DealProvider.cs" />
-    <Compile Include="Data\UserProvider.cs" />
+    <Compile Include="DataAccess\ConfigurationProvider.cs" />
+    <Compile Include="DataAccess\Constants\StoredProcedures.cs" />
+    <Compile Include="DataAccess\DealsProvider.cs" />
+    <Compile Include="DataAccess\IDealsProvider.cs" />
+    <Compile Include="DataAccess\IUserInfoProvider.cs" />
+    <Compile Include="DataAccess\UserInfoProvider.cs" />
+    <Compile Include="Data\LoginInfo.cs" />
+    <Compile Include="Models\Deal.cs" />
+    <Compile Include="Data\User.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -234,7 +240,9 @@
     <Content Include="Views\Home\DeleteDeals.cshtml" />
     <Content Include="Views\Home\Sent.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Business\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>

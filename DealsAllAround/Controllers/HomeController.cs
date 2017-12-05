@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using DealsAllAround.DataAccess;
 using DealsAllAround.Models;
 using System.Web.Mvc;
-using DealsAllAround.Data;
 using System.Net.Mail;
 using System.Web.Security;
 
-namespace Deals_All_Around.Controllers
+namespace DealsAllAround.Controllers
 {
     public class HomeController : Controller
     {
+        private IUserInfoProvider userInfoProvider = new UserInfoProvider();
+
         public ActionResult Index()
         {
             return View();
@@ -22,7 +24,7 @@ namespace Deals_All_Around.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(UserProvider userpro)
+        public async Task<ActionResult> Register(User userpro)
         {         
             if (ModelState.IsValid)
             {
@@ -49,11 +51,11 @@ namespace Deals_All_Around.Controllers
         }
        
         [HttpPost]
-        public ActionResult Login(ApplicationUser user)
+        public ActionResult Login(LoginInfo user)
         {
             if (ModelState.IsValid)
             { 
-            if (user.IsValid(user.email, user.password))
+            if (userInfoProvider.IsValid(user.email, user.password))
             {
                     Session["SessionEmail"] = user.email;   
                     //FormsAuthentication.SetAuthCookie(user.email, user.rememberme);
@@ -70,7 +72,7 @@ namespace Deals_All_Around.Controllers
         public ActionResult Choose()
         {
 
-            var vSessionValue = new ApplicationUser();
+            var vSessionValue = new LoginInfo();
             try
             {
                 if ((Object)Session["SessionEmail"] != null)
@@ -104,7 +106,7 @@ namespace Deals_All_Around.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(UserProvider userpro)
+        public async Task<ActionResult> Contact(User userpro)
         {
             if (ModelState.IsValid)
             {
@@ -133,7 +135,7 @@ namespace Deals_All_Around.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddDeals(DealProvider dealpro)
+        public ActionResult AddDeals(Deal dealpro)
         {
                  if (ModelState.IsValid)
                             {
@@ -148,7 +150,7 @@ namespace Deals_All_Around.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UpdateDeals(DealProvider dealpro)
+        public ActionResult UpdateDeals(Deal dealpro)
         {
             if (ModelState.IsValid)
             {
@@ -164,9 +166,9 @@ namespace Deals_All_Around.Controllers
         }
 
         [HttpPost]
-        public ActionResult ShowAllData(DealsViewModel dealsVM, DealProvider dp)
+        public ActionResult ShowAllData(DealsViewModel dealsVM, Deal dp)
         {
-            List<DealProvider> dealpro = dealsVM.GetAllData();
+            List<Deal> dealpro = dealsVM.GetAllData();
             return View(dealpro);
         }
         public ActionResult DeleteDeals()
@@ -174,7 +176,7 @@ namespace Deals_All_Around.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult DeleteDeals(DealProvider dealpro)
+        public ActionResult DeleteDeals(Deal dealpro)
         {
             if (ModelState.IsValid)
             {

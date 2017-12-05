@@ -100,7 +100,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DealsAllAround\DealsAllAround.csproj">
-      <Project>{5123BE5F-C717-467C-8FE7-C94987A3914C}</Project>
+      <Project>{5123be5f-c717-467c-8fe7-c94987a3914c}</Project>
       <Name>DealsAllAround</Name>
     </ProjectReference>
   </ItemGroup>

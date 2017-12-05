@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DealsAllAround.Models
 {
-    public class DealProvider
+    public class Deal
     {
         public int id { get; set; }     
         public string description { get; set; } 

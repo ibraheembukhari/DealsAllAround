@@ -1,6 +1,6 @@
-﻿namespace DealsAllAround.Data
+﻿namespace DealsAllAround.DataAccess
 {
-    public class UserProvider
+    public class User
     {
         //[Required (ErrorMessage ="Name is Required.")]
         //[Display(Name = "Name")]
